@@ -77,6 +77,7 @@ function installJWT(secret) {
     debug('handleLogin!', req.body.username);
     const username = req.body.username;
     const password = req.body.password;
+    //NOTE this would be a db call to validate user
     const dbRecord = { id: 1, name: username}
     if (!dbRecord || !dbRecord.id || dbRecord.name !== username) {
       reply
