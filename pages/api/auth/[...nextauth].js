@@ -12,7 +12,7 @@ const options = {
       // e.g. domain, username, password, 2FA token, etc.
       credentials: {
         username: { label: "Username", type: "text", required:true, placeholder: "jsmith" },
-        password: {  label: "Password", type: "password" }
+        password: { label: "Password", type: "password" }
       },
        async authorize(credentials) {
         console.log('authorizeauthorize');
