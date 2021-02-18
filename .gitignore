@@ -1,0 +1,20 @@
+node_modules
+*.png
+*.pdf
+npm-debug.log
+dist
+.nyc_output
+coverage
+test-reports
+pkg
+.env
+.idea
+.DS_Store
+initdb.sql
+
+*.backup.gz
+.next
+
+# exclude everything, but keep data directory
+data/*
+!data/.gitkeep
