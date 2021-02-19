@@ -1,4 +1,4 @@
-const fastify = require('fastify')({ logger: process.env.FASTIFYLOG_ENABLED === 'true' });
+const fastify = require('fastify')({ logger: 'true' });
 const fastifyJwt = require('fastify-jwt');
 const fastifyNextJs = require('fastify-nextjs');
 const fastifyCookie = require('fastify-cookie');

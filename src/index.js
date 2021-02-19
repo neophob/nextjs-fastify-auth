@@ -1,4 +1,3 @@
-
 const debug = require('debug')('demo:index');
 const rest = require('./lib/rest');
 
