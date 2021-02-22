@@ -17,10 +17,10 @@
     "fastify-cookie": "^5.1.0",
     "fastify-formbody": "^5.0.0",
     "fastify-jwt": "^2.3.0",
-    "fastify-nextjs": "^5.1.0",
+    "fastify-nextjs": "^5.2.0",
     "http-errors": "^1.8.0",
     "next": "^10.0.7",
-    "next-auth": "^3.4.2",
+    "next-auth": "^3.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
