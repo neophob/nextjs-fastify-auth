@@ -7,7 +7,7 @@
     "node": "15.x"
   },
   "scripts": {
-    "start": "DEBUG='*' NEXTAUTH_URL=http://localhost:3333 SECRET=123 node src/index.js"
+    "start": "DEBUG='demo*' NEXTAUTH_URL=http://localhost:3333 SECRET=123 node src/index.js"
   },
   "author": "",
   "license": "ISC",

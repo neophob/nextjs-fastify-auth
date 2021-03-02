@@ -22,7 +22,7 @@ const options = {
 
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
-          return (user)
+          return user;
         } else {
           // If you return null or false then the credentials will be rejected
           return (null)
@@ -44,7 +44,7 @@ const options = {
       return token
     },
     async session(session, token) {
-      console.log('CB:SESSION!', {token, user, account, profile, isNewUser})
+      console.log('CB:SESSION!', {token, session})
       if(token?.accessToken) {
         // Add property to session, like an access_token from a provider
         session.accessToken = token.accessToken
