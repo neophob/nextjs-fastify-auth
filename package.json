@@ -7,7 +7,7 @@
     "node": "15.x"
   },
   "scripts": {
-    "start": "DEBUG='demo*' NEXTAUTH_URL=http://localhost:3333 SECRET=123 node src/index.js"
+    "start": "DEBUG='*' NEXTAUTH_URL=http://localhost:3333 SECRET=123 node src/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +15,6 @@
     "debug": "^4.3.1",
     "fastify": "^3.12.0",
     "fastify-cookie": "^5.1.0",
-    "fastify-formbody": "^5.0.0",
     "fastify-jwt": "^2.3.0",
     "fastify-nextjs": "^5.2.0",
     "http-errors": "^1.8.0",

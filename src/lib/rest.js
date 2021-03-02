@@ -4,8 +4,6 @@ const fastifyNextJs = require('fastify-nextjs');
 const fastifyCookie = require('fastify-cookie');
 const debug = require('debug')('demo:rest');
 
-fastify.register(require('fastify-formbody'));
-
 const cookieJwtKey = 'token';
 const mimeTypeJson = 'application/json; charset=utf-8';
 const tokenExpiresIn = process.env.TOKEN_EXPIRES || '1h';
@@ -41,6 +39,7 @@ function startServer(listenPort) {
 
 function installNextJs() {
   fastify
+    .addContentTypeParser('application/x-www-form-urlencoded', async (_, payload) => payload)
     .register(fastifyNextJs, { dev: true, logLevel: 'debug' })
     .after(() => {
       fastify.next('/api/*', { method: 'get' });

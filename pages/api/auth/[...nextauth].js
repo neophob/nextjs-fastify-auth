@@ -14,7 +14,7 @@ const options = {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" }
       },
-       async authorize(credentials) {
+      async authorize(credentials) {
         console.log('authorizeauthorize');
 
         // Add logic here to look up the user from the credentials supplied
@@ -35,17 +35,6 @@ const options = {
   ],
   secret: 'this is a string that i should set an maybe use an env variable',
   callbacks: {
-    async authorize(user, account, profile) {
-      console.log('CB:authorize', {user, account, profile});
-      return true
-    },
-    async signIn(user, account, profile) {
-      console.log('CB:signIn', {user, account, profile});
-      const isAllowedToSignIn = true
-      if (isAllowedToSignIn) {
-        return true
-      }
-    },
     async jwt(token, user, account, profile, isNewUser) {
       console.log('CB:JWT', {token, user, account, profile, isNewUser})
       // Add access_token to the token right after signin
@@ -62,27 +51,13 @@ const options = {
       }
       return session
     },
-    async redirect(url, baseUrl) {
-      console.log('CB:REDIRECT!', {url, baseUrl})
-      return url.startsWith(baseUrl)
-        ? url
-        : baseUrl
-    }
   },
   session: {
     jwt: true,
     // Seconds - How long until an idle session expires and is no longer valid.
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
-/*  pages: {
-    //signIn: '/auth2/signin',
-  },*/
   events: {
-    async signIn(message) { console.log('EVT signIn', message); },
-    async signOut(message) { console.log('EVT signOut', message); },
-    async createUser(message) { console.log('EVT createUser', message); },
-    async linkAccount(message) { console.log('EVT linkAccount', message); },
-    async session(message) { console.log('EVT session', message);},
     async error(message) { console.log('EVT error', message); }
   },
   debug: true,
